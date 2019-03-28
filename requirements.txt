@@ -1,4 +1,9 @@
 Flask
+
 gunicorn
+
 conda
-bokeh
+
+bokeh==1.0.2
+quandl
+requests==2.20.0
