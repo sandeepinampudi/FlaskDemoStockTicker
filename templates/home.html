@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv='content-type' content='text/html; charset=utf-8' />
+
+    <title>Embed Demo</title>
+
+    {{ js_resources|indent(4)|safe }}
+
+    {{ css_resources|indent(4)|safe }}
+
+    {{ plot_script|indent(4)|safe }}
+
+  </head>
+  <body>
+    <!-- A simple form for changing the graph -->
+    <p> A FLASK based web server that accepts a stock ticker input from the user and plots closing price data </p>
+    <p> Select your settings: </p>
+    <form name="Ticker_button" method='GET'>
+        <br>
+        Enter a Ticker Symbol:
+        <input type="text" name="Tick" value="{{ Tick }}">
+        <br>
+        Select Start Date (YYYY-MM-DD):
+        <input type="text" name="_from" value="{{ _from }}">
+        <br>
+        Select END Date (YYYY-MM-DD):
+        <input type="text" name="to" value="{{ to }}">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    {{ plot_div|indent(4)|safe }}
+    </body>
+</html>
